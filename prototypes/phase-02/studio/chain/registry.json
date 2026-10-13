@@ -1,0 +1,21 @@
+{
+  "note": "Explicit region registry (Phase 01, W3 copy). A regionId maps to one component, its source file and the files a task may change. Not automatic source mapping. W3 adds evidence hints (neighbour panel) and the region's classes for spec validation.",
+  "projectRoot": "target-app",
+  "project": "riverside-library",
+  "page": "Home",
+  "regions": {
+    "info-panel": {
+      "label": "Opening hours panel",
+      "component": "InfoPanel",
+      "sourceFile": "src/components/InfoPanel.tsx",
+      "allowedFiles": ["src/components/InfoPanel.css"],
+      "preserve": [
+        "Panel text content (InfoPanel.tsx is read-only for tasks on this region)",
+        "Show/Hide details toggle",
+        "NotesPanel (unregistered region) unchanged"
+      ],
+      "neighbour": ".notes-panel",
+      "classes": ["info-panel", "info-kicker", "info-title", "info-lead", "info-facts", "info-toggle", "info-details"]
+    }
+  }
+}

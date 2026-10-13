@@ -1,0 +1,70 @@
+{
+  "note": "M1 region registry (D-028). One region, one component: Header.tsx plus the styles it uses in dashboard.css. Hand-written from the real files, not derived automatically.",
+  "project": "ai-earth (M1 copy)",
+  "page": "Dashboard",
+  "projectRoot": "project",
+  "regions": {
+    "site-header": {
+      "label": "Site header",
+      "component": "Header",
+      "sourceFile": "src/app/Header.tsx",
+      "allowedFiles": [
+        "src/app/Header.tsx",
+        "src/app/dashboard.css"
+      ],
+      "preserve": [
+        "Every piece of header text and every link stays readable and reachable: the AI Earth home link, the fixture and review notices, Search, the \"As of …\" panel with all of its facts, Copy link, Reset.",
+        "Search keeps working the same way (typing, arrow keys, Enter, Escape) and keeps its label and combobox roles; the \"As of …\" disclosure still opens and closes; Copy link still copies and still announces the result.",
+        "An icon may stand beside a label, never instead of it — no control loses its visible text or its accessible name.",
+        "Nothing outside the header changes: the coverage line, the workspace, the rail, the footer and all data stay as they are."
+      ],
+      "neighbour": ".r5-coverage",
+      "neighbourLabel": "coverage line under the header",
+      "interaction": {
+        "kind": "details",
+        "selector": "[data-region-id=\"site-header\"] details.freshness > summary",
+        "label": "the \"As of …\" panel opens and closes"
+      },
+      "classes": [
+        "site-header",
+        "brand",
+        "fixture-badge",
+        "review-badge",
+        "search",
+        "search-results",
+        "search-empty",
+        "freshness",
+        "freshness-body",
+        "freshness-facts",
+        "freshness-note"
+      ],
+      "mode": "single-call",
+      "notes": "M1 (D-028): the header component and its styles may both be edited. No new dependency: this project has no icon library, it draws inline SVG (the brand mark in Header.tsx is one), so icons are inline SVG.",
+      "mustKeep": {
+        "src/app/Header.tsx": [
+          "AI Earth home",
+          "search-input",
+          "combobox",
+          "aria-controls",
+          "As of ",
+          "Copy link",
+          "Reset",
+          "aria-live",
+          "freshness",
+          "Snapshot cutoff",
+          "Latest recorded development",
+          "Development search",
+          "Reviewed",
+          "Coverage:",
+          "Corrections:",
+          "data-region-id"
+        ]
+      },
+      "forbid": [
+        "@keyframes",
+        "animation:",
+        "animation-name:"
+      ]
+    }
+  }
+}

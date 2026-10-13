@@ -1,0 +1,6 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #f4f4f1; color: #1f2421; }
+.page { max-width: 980px; margin: 0 auto; padding: 24px; }
+.site-head h1 { margin: 0 0 4px; font-size: 26px; }
+.site-head p { margin: 0 0 20px; color: #5b625d; }
+.grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }

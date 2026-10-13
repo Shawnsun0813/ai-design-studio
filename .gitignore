@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.vite/
+
+# runtime state and cost ledgers the studio writes while it runs
+outputs/
+.sessions/
+.chain-state/
+.stub-state/
+
+# never publish credentials
+.env
+.env.*
+*.pem
+*.key
+.anthropic-key
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
