@@ -2,7 +2,7 @@
 
 **An AI design workbench for improving existing websites through visual context, natural-language feedback, and reversible code changes.**
 
-A site already works; changing how it looks is still a coding task. You describe what you want, something gets rewritten, and the parts you were happy with quietly break. AI Design Studio keeps the running page, the design conversation, the execution activity and the version decisions in one place — and never lets the model write outside a registered region.
+A site already works; changing how it looks is still a coding task. You describe what you want, something gets rewritten, and the parts you were happy with quietly break. AI Design Studio keeps the running page, the design conversation, the execution activity and the version decisions in one place — and constrains edits through registered file boundaries, scope checks, and baseline validation.
 
 ![The workbench during round 1](assets/workbench.png)
 
@@ -91,7 +91,7 @@ To point the studio at your own project, write a region registry by hand — reg
 
 Three kinds of evidence, deliberately kept apart — none of them substitutes for another.
 
-**1. Program checks (developer tests, real API).** One two-round session on the header case passed all 14 browser checks: the component and its styles really changed, the page still builds and renders, every label and accessible name survived, the key interaction and the neighbouring region still behave, only the two allowed files were touched, the rest of the page is byte-identical, feedback builds on the current version, a stale command writes nothing, and restore puts both files back. The first result arrived **62 seconds** after submitting, from **one** model call, at **US$0.2447** for the session, on code `c165c570b3db`. One run, not a benchmark.
+**1. Program checks (developer tests, real API).** One two-round session on the header case passed all 14 browser checks: the component and its styles really changed, the page still builds and renders, every label and accessible name survived, the key interaction and the neighbouring region still behave, only the two allowed files were touched, checks found no changes in the monitored non-header regions, feedback builds on the current version, a stale command writes nothing, and restore puts both files back. The first result arrived **62 seconds** after submitting, from **one** model call, at **US$0.2447** for the session, on code `c165c570b3db`. One run, not a benchmark.
 
 **2. Owner adoption.** As the owner of that site I used the workbench for real: **3 sessions, 4 written versions, 4 adopted, 0 failed tasks, US$0.5239** of real API spend. In one session I adopted a result, gave one line of feedback, and adopted the next result too. "Adopted" means I chose to keep it — not that anyone else reviewed it.
 
